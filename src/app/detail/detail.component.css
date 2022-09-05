@@ -1,0 +1,21 @@
+.hr2:not([size]) {
+  height: 6px;
+  opacity: 5.25;
+}
+
+.text {
+  color: white;
+}
+
+.text:hover {
+  color: black;
+}
+.icon{
+  width: 25px;
+}
+.text1:hover {
+  color: #e83e8c;
+}
+.text1 {
+  color: white;
+}
