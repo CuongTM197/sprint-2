@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  overflow: hidden;
+  background: #151414;
+}
+
+header.logo {
+  width: 25%;
+  float: left;
+}
+
+header.logo img {
+  width: 100%;
+}
+
+.content {
+  width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+nav {
+  background: #778899;
+  border-bottom: 4px solid #CD5C5C;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Arial';
+  display: inline-block;
+  padding: 8px 21px;
+}
+
+nav ul li a:hover {
+  background: #CD5C5C;
+}
+
+.contact-icon {
+  position: absolute;
+  display: inline-block;
+  padding: 10px 23px;
+}
+
+.contact-icon-1 {
+  position: absolute;
+  display: inline-block;
+  padding: 10px 23px;
+}
+
+.contact-icon i {
+  font-size: 20px;
+  top: -2px;
+  position: relative;
+  color: #007bff;
+}
+
+.contact-icon-1 i {
+  font-size: 20px;
+  top: 5px;
+  position: relative;
+  color: #007bff;
+}
+
+.contact-info {
+  margin-left: 62px;
+  color: #fff;
+}
+
+.contact-info h6 {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.container-1 input#search {
+  width: 350px;
+  height: 40px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #262626;
+  padding-left: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+
+  -webkit-transition: background .55s ease;
+  -moz-transition: background .55s ease;
+  -ms-transition: background .55s ease;
+  -o-transition: background .55s ease;
+  transition: background .55s ease;
+}
+
+.container-1 {
+  margin-top: 25px;
+}
+
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active {
+  outline: none;
+  background: #ffffff;
+}
+
+.container-1 .icon {
+  position: absolute;
+  top: 50%;
+  margin-left: 312px;
+  margin-top: -12px;
+  z-index: 1;
+  color: #4f5b66;
+}
+.ex{
+  padding: 6px;
+  width: 230px;
+  display: block;
+  position: relative;
+  background: url('https://cdn.mediamart.vn/css/images_nav/menu-nav-black.png') no-repeat 10px center transparent;
+  height: 40px;
+  text-align: right;
+}
+.main-nav{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 40px;
+}
+.btx {
+  color: #ffffff;
+}
+.i-br {
+  border-right: 1px solid #e0e0e0;
+  border-right-: 2px;
+}

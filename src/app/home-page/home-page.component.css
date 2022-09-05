@@ -1,0 +1,52 @@
+#nav-main {
+  top: 0px;
+  border: 1px solid #ebebeb;
+  width: 230px;
+  height: 345px;
+  background-color: #fff;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+}
+
+#home-size {
+  margin-left: 240px;
+  max-height: 360px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.home-box {
+  margin-left: 49px;
+  padding-left: 10px !important;
+  max-height: 360px;
+  overflow: hidden;
+}
+/*.home-box1 {*/
+/*  padding-left: 10px !important;*/
+/*  max-height: 360px;*/
+/*  overflow: hidden;*/
+/*}*/
+.carou{
+  margin-left: -7px;
+  position: relative;
+  width: 114%;
+  overflow: hidden;
+}
+
+img:hover {
+  transition: 0.4s;
+  position: relative;
+}
+.product-bestseller {
+  margin-top: 12px;
+  width: 100%;
+  display: inline-block;
+  background-color: #ffd900;
+  padding: 4px;
+  border-radius: 5px;
+}
+.product-flash {
+  width: 100%;
+  display: inline-block;
+  background-color: #ea0009;
+  padding: 4px;
+  border-radius: 5px;
+}
