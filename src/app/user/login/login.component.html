@@ -1,0 +1,109 @@
+<!--<div class="container-fluid" style="position: relative !important;">-->
+<!--  <div class="bg-img">-->
+<!--    <div class="content">-->
+<!--      <header>Đăng nhập</header>-->
+<!--      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">-->
+<!--        <div class="field" data-toggle="username" data-content="Tên tài khoản không được để trống" id="field-username">-->
+<!--          <span class="fa fa-user"></span>-->
+<!--          <input id="username" type="text" required placeholder="Tên tài khoản" formControlName="username"-->
+<!--                 (input)="checkErrorUsername()">-->
+<!--        </div>-->
+<!--        <div class="field space" data-toggle="password" data-content="Mật khẩu không được để trống" id="field-password">-->
+<!--          <span class="fa fa-lock"></span>-->
+<!--          <input id="password" type="password" class="pass-key" required placeholder="Nhập mật khẩu"-->
+<!--                 formControlName="password"-->
+<!--                 (input)="checkErrorPassword()">-->
+<!--          <span class="show" (click)="showPassword()">{{passwordStatus}}</span>-->
+<!--        </div>-->
+<!--        <div class="pass">-->
+<!--          <a href="#">Quên mật khẩu?</a>-->
+<!--        </div>-->
+<!--        <div *ngIf="activeLogin">-->
+<!--          <div class="field">-->
+<!--            <button *ngIf="buttonLoginStatus" type="submit">Đăng Nhập</button>-->
+<!--            <button *ngIf="!buttonLoginStatus" type="button" style="background-color: #3498db !important; color: white !important;" disabled>-->
+<!--              <div class="spinner-border spinner-border-sm mb-1"></div>-->
+<!--              Đang tải...-->
+<!--            </button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div *ngIf="!activeLogin">-->
+<!--          <div *ngIf="realTimeSecond < 10">-->
+<!--            <div class="field">-->
+<!--              <button class="disabled" type="button"-->
+<!--                      style="background-color: #3498db !important; color: white !important;">-->
+<!--                0{{realTimeMinute}} : 0{{realTimeSecond}}-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div *ngIf="realTimeSecond >= 10">-->
+<!--            <div class="field">-->
+<!--              <button class="disabled" type="button"-->
+<!--                      style="background-color: #3498db !important; color: white !important;">-->
+<!--                0{{realTimeMinute}} : {{realTimeSecond}}-->
+<!--              </button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--      <div class="signup">Bạn không có tài khoản?-->
+<!--        <a [routerLink]="['/register']">Đăng ký</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container-fluid">
+  <div class="row no-gutter">
+    <!-- The image half -->
+    <div class="col-md-6 d-none d-md-flex bg-image"></div>
+
+
+    <!-- The content half -->
+    <div class="col-md-6 bg-light">
+      <div class="login d-flex align-items-center py-5">
+
+        <!-- Demo content-->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-xl-7 mx-auto">
+              <h4 class="display-4">Đăng nhập</h4>
+              <p class="text-muted mb-4">Sử dụng tài khoản của bạn để đăng nhập.</p>
+              <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <div class="form-group mb-3">
+                  <input id="inputEmail" type="email" placeholder="Nhập địa chỉ email của bạn" required="" autofocus=""
+                         class="form-control rounded-pill border-0 shadow-sm px-4" formControlName="username" (input)="checkErrorUsername()" >
+                </div>
+                <div class="form-group mb-3">
+                  <input id="inputPassword" type="password" placeholder="Mật khẩu" required=""
+                         class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" formControlName="password" (input)="checkErrorPassword()">
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                  <input id="customCheck1" type="checkbox" checked class="custom-control-input">
+                  <label for="customCheck1" class="custom-control-label">Ghi nhớ?</label>
+                </div>
+                <button *ngIf="buttonLoginStatus" type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Đăng
+                  nhập
+                </button>
+                <button *ngIf="!buttonLoginStatus" type="button" style="background-color: #3498db !important; color: white !important;" disabled>
+                  <div class="spinner-border spinner-border-sm mb-1"></div>
+                  Đang tải...
+                </button>
+                <div class="text-center d-flex justify-content-between mt-4">
+                  <a href="" routerLink="/register" class="font-italic text-muted">
+                    <u>Đăng ký tài khoản</u></a>
+                  <br>
+                  <a href="" class="font-italic text-muted">
+                    <u>Quên mật khẩu.</u>
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div><!-- End -->
+
+      </div>
+    </div><!-- End -->
+
+  </div>
+</div>

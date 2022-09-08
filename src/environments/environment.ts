@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:8080',
+  firebaseConfig: {
+    apiKey: 'AIzaSyBbs9jFi8HHLLMB7hyC_1_VHlznJGNs9d0',
+    authDomain: 'marine-equinox-236204.firebaseapp.com',
+    databaseURL: 'https://marine-equinox-236204-default-rtdb.asia-southeast1.firebasedatabase.app',
+    projectId: 'marine-equinox-236204',
+    storageBucket: 'marine-equinox-236204.appspot.com',
+    messagingSenderId: '997925204096',
+    appId: '1:997925204096:web:2662721f2d5bc46d29f665'
+  }
 };
 
 /*

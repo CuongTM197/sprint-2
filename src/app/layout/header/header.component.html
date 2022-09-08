@@ -1,0 +1,149 @@
+<!--&lt;!&ndash; Navbar Start &ndash;&gt;-->
+<!--<div class="container-fluid mb-2">-->
+<!--  <div class="row border-top px-xl-5">-->
+<!--    <div class="col-lg-12">-->
+<!--      <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">-->
+<!--        <a [routerLink]="['/home']" class="text-decoration-none d-block d-lg-none">-->
+<!--          <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">XIAOMI</span>Store-->
+<!--          </h1>-->
+<!--        </a>-->
+<!--        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">-->
+<!--          <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">-->
+<!--          <div class="col-lg-3 d-none d-lg-block mr-5">-->
+<!--            <a [routerLink]="['/home']" class="text-decoration-none">-->
+<!--              <img style="width: 50%" src="https://vanphongxanh.vn/wp-content/uploads/2022/03/logo-social.png" alt="">-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <div class="navbar-nav ml-auto py-0 text-center">-->
+<!--            <a [routerLink]="['/home']"  class="nav-item nav-link active">Trang chủ</a>-->
+<!--            <a [routerLink]="['/product/list']"  class="nav-item nav-link">Danh sách sản phẩm</a>-->
+<!--            <div class="nav-item dropdown" *ngIf="role == 'ROLE_ADMIN' && loginStatus == true">-->
+<!--              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Quản lý sản phẩm</a>-->
+<!--              <div class="dropdown-menu rounded-0 m-0">-->
+<!--                <a [routerLink]="['/product/create']" class="dropdown-item">Thêm mới sản phẩm</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="nav-item dropdown" *ngIf="loginStatus == true && buttonLogoutStatus">-->
+<!--              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hello {{username}}</a>-->
+<!--              <div class="dropdown-menu rounded-0 m-0">-->
+<!--                <a [routerLink]="" class="dropdown-item" (click)="onLogout()" *ngIf="loginStatus == true && buttonLogoutStatus">Đăng xuất</a>-->
+<!--                <a [routerLink]="" class="dropdown-item">Thông tin cá nhân</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="nav-item dropdown" *ngIf="loginStatus == true && !buttonLogoutStatus">-->
+<!--              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">-->
+<!--                <div class="spinner-border spinner-border-sm mb-1"></div>-->
+<!--                Hello {{username}}-->
+<!--              </a>-->
+<!--            </div>-->
+<!--            <a [routerLink]="['/login']" class="nav-item nav-link" *ngIf="loginStatus == false">Đăng nhập</a>-->
+<!--            <a [routerLink]="['/register']" class="nav-item nav-link" *ngIf="loginStatus == false">Đăng ký</a>-->
+<!--            <a href="" class="nav-item nav-link">-->
+<!--              <i class="fas fa-shopping-cart text-primary"></i>-->
+<!--              <span class="badge">0</span>-->
+<!--            </a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </nav>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!-- Navbar End -->
+
+<header id="header">
+  <div class="container-fluid">
+    <div class=" row content">
+      <div class="col-md-2 logo">
+        <img src="assets/img/logo.png" style="width: 65%; height: 90px" alt="">
+      </div>
+      <div class="col-md-2 mt-4">
+        <div class="contact-icon">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <div class="contact-info">
+          <h6>9571 195 252</h6>
+          <p style="font-size: 12px">Tư vấn bán hàng</p>
+        </div>
+      </div>
+      <div class="col-md-2 mt-4">
+<!--        <div class="contact-icon">-->
+<!--          <i class="fa-solid fa-location-dot"></i>-->
+<!--        </div>-->
+<!--        <div class="contact-info">-->
+<!--          <h6>Tìm siêu thị ></h6>-->
+<!--          <p style="font-size: 12px">Mở cửa: 8:00 - 21:30</p>-->
+<!--        </div>-->
+        <div class="contact-icon-1">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+        <div class="contact-info" routerLink="/cart">
+          <h5 style="margin-top: 13px">Giỏ hàng</h5>
+        </div>
+
+      </div>
+      <div class="col-md-2 mt-3">
+        <div class="nav-item dropdown" *ngIf="role == 'ROLE_ADMIN' && loginStatus == true">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="padding-top: 20px">Quản lý sản phẩm</a>
+          <div class="dropdown-menu rounded-0 m-0">
+            <a [routerLink]="['/product/create']" class="dropdown-item">Thêm mới sản phẩm</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 box">
+        <div class="nav-item dropdown" *ngIf="loginStatus == true && buttonLogoutStatus" style="margin-left: 232px">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hello {{username}}</a>
+          <div class="dropdown-menu rounded-0 m-0">
+            <a [routerLink]="" class="dropdown-item" (click)="onLogout()"
+               *ngIf="loginStatus == true && buttonLogoutStatus">Đăng xuất</a>
+            <a [routerLink]="" class="dropdown-item">Thông tin cá nhân</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown" *ngIf="loginStatus == true && !buttonLogoutStatus">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            <div class="spinner-border spinner-border-sm mb-1"></div>
+            Hello {{username}}
+          </a>
+        </div>
+        <div style="margin-left: 182px">
+          <ul style="list-style: none">
+            <li>
+              <a class="mx-3" routerLink="/login" *ngIf="loginStatus == false" style="float: left"> Đăng nhập</a>
+            </li>
+            <li>
+              <a href="#" routerLink="/register" *ngIf="loginStatus == false">Đăng ký</a>
+            </li>
+          </ul>
+        </div>
+        <div class="container-1">
+          <span class="icon"><i class="fa fa-search"></i></span>
+          <input type="search" id="search" placeholder="Bạn cần tìm gì ?" autocomplete="off"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+<nav class="row">
+  <div class=" col-md-3 dropdown show main-nav">
+    <a class="btx dropdown-toggle ex" style="margin-left: 154px" href="#" role="button" id="dropdownMenuLink"
+       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLink="/product/list">
+      DANH MỤC SẢN PHẨM
+    </a>
+  </div>
+  <div class=" col-md-9 content">
+    <ul>
+      <li class="i-br"><a href="">Tivi </a></li>
+      <li class="i-br"><a href="">Tủ lạnh </a></li>
+      <li class="i-br"><a href="">Điều hoà </a></li>
+      <li class="i-br"><a href="">Máy Giặt </a></li>
+      <li class="i-br"><a href="">Gia dụng</a></li>
+      <li class="i-br"><a href="">Điện thoại</a></li>
+      <li class="i-br"><a href="">Laptop</a></li>
+      <li class="i-br"><a href="">Quạt</a></li>
+      <li class="i-br"><a href="">Nồi chiên không dầu</a></li>
+      <li><a href="">Máy lọc nước</a></li>
+    </ul>
+  </div>
+</nav>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shopOnline": {
+    "project-angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/shopOnline",
+            "outputPath": "dist/project-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -62,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "shopOnline:build"
+            "browserTarget": "project-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "shopOnline:build:production"
+              "browserTarget": "project-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shopOnline:build"
+            "browserTarget": "project-angular:build"
           }
         },
         "test": {
@@ -110,19 +111,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "shopOnline:serve"
+            "devServerTarget": "project-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "shopOnline:serve:production"
+              "devServerTarget": "project-angular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "shopOnline",
+  "defaultProject": "project-angular",
   "cli": {
-    "analytics": "036f55a9-80e7-40f2-a16a-4370ba071cf0"
+    "analytics": false
   }
 }
