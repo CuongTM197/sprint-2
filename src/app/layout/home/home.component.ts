@@ -11,7 +11,11 @@ import {Product} from '../../model/Product';
 })
 export class HomeComponent implements OnInit {
   categories: Category[];
-  products: Product[];
+  products: Product[] = [];
+  totalElements: number;
+  page: any;
+  totalPage;
+  public role: string;
 
   constructor(private categoryService: CategoryService,
               private productService: ProductService) {
@@ -20,6 +24,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getAllCategories();
     this.getNewProducts();
+    this.getAllproduct();
+    if (this.totalElements === 1) {
+      this.products.length = 0;
+    }
+    if (this.totalElements>= this.products.length) {
+this.products.length =0;
+    }
   }
 
   getAllCategories() {
@@ -36,5 +47,19 @@ export class HomeComponent implements OnInit {
     this.productService.getNewProducts().subscribe(value => {
       this.products = value;
     });
+  }
+
+  getAllproduct() {
+    this.productService.getAllPageProducts(this.page).subscribe((value: any) => {
+      if (value != null) {
+        this.products = value.content;
+        this.totalElements = value.totalElements;
+        this.page = value.totalPage;
+      }
+    })
+  }
+  getPage(event: number) {
+    this.page = event - 1;
+    this.getAllproduct();
   }
 }

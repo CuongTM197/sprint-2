@@ -69,6 +69,7 @@ export class ProductCreateComponent implements OnInit {
             this.product.image = url;
             this.productService.createNewProduct(this.product).subscribe(value => {
               this.toastrService.success('Thêm mới thành công!');
+              this.router.navigateByUrl('/home');
             });
           });
         })

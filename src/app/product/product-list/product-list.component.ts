@@ -22,8 +22,7 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService,
               private categoryService: CategoryService,
               private router: Router,
-              private authService: AuthService,
-              private toastrService: ToastrService) {
+              private authService: AuthService) {
     this.authService.checkLogin().subscribe(value => {
       this.loginStatus = value;
       this.role = this.readLocalStorage('role');

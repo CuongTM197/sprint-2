@@ -29,4 +29,7 @@ export class ProductService {
   findProductById(id: string): Observable<Product> {
     return this.httpClient.get<Product>(API_URL + '/product/detail/' + id);
   }
+  searchGameByName(name: string, page: number): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(API_URL + `/product/search?name=${name}&page=${page}`);
+  }
 }

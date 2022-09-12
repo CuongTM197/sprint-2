@@ -88,20 +88,18 @@
   <div class="row px-xl-5">
     <div class="col-md-6 pb-4">
       <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
-        <img src="assets/img/offer-1.png" alt="">
         <div class="position-relative" style="z-index: 1;">
           <h5 class="text-uppercase text-primary mb-3">Giảm 20% cho tất cả sản phẩm</h5>
-          <h1 class="mb-4 font-weight-semi-bold">Laptop gamming</h1>
+          <h1 class="mb-4 font-weight-semi-bold">TIVI-SAMSUNG thế hệ mới</h1>
           <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Mua ngay</a>
         </div>
       </div>
     </div>
     <div class="col-md-6 pb-4">
       <div class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5">
-        <img src="assets/img/offer-2.png" alt="">
         <div class="position-relative" style="z-index: 1;">
           <h5 class="text-uppercase text-primary mb-3">Giảm 20% cho tất cả sản phẩm</h5>
-          <h1 class="mb-4 font-weight-semi-bold">Gamming phone</h1>
+          <h1 class="mb-4 font-weight-semi-bold">LG- thế hệ mới</h1>
           <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Mua ngay</a>
         </div>
       </div>
@@ -114,177 +112,179 @@
 <!-- Products Start -->
 <div class="container-fluid pt-5">
   <div class="text-center mb-4">
-    <h2 class="section-title px-5"><span class="px-2">SẢN PHẨM HOT</span></h2>
+    <h2 class="section-title px-5" style="color: chocolate"><span class="px-2">SẢN PHẨM HOT</span></h2>
   </div>
   <div class="row px-xl-5 pb-3">
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-      <div class="card product-item border-0 mb-4">
+    <div class="col-lg-3 col-md-6 col-sm-12 pb-1" *ngFor="let product of products">
+      <div class="card product-item border-0 mb-4" >
         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-          <img class="img-fluid w-100" src="assets/img/tivi1.png" alt="">
+          <img class="img-fluid w-100" src="{{product.image}}" alt="">
         </div>
         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-          <h6 class="text-truncate mb-3">Samsung Smart TV QLED QA65Q70A</h6>
+          <h6 class="text-truncate mb-3">{{product.name}}</h6>
           <div class="d-flex justify-content-center">
-            <h6>25.990.000đ</h6>
+            <h6>{{product.price - (product.price * (product.discountPercent / 100)) | currency: 'VND': ''}}<sup>đ</sup></h6>
             <h6 class="text-muted ml-2">
-              <del>30.990.000đ</del>
+              <del>{{product.price| currency: 'VND': ''}}<sup>đ</sup></del>
+              <span class="text-danger"> - {{product.discountPercent}}%</span>
             </h6>
           </div>
         </div>
         <div class="card-footer d-flex justify-content-between bg-light border">
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
+          <a [routerLink]="['/product/detail', product.id]" href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
           <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ
             hàng</a>
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-      <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-          <img class="img-fluid w-100" src="assets/img/tivi2.png" alt="">
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-          <h6 class="text-truncate mb-3">Sony Google TV KD-55X75K</h6>
-          <div class="d-flex justify-content-center">
-            <h6>28.790.000đ</h6>
-            <h6 class="text-muted ml-2">
-              <del>33.990.000đ</del>
-            </h6>
-          </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between bg-light border">
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ
-            hàng</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-      <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-          <img class="img-fluid w-100" src="assets/img/tivi3.png" alt="">
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-          <h6 class="text-truncate mb-3">Sony Xperia 1 IV</h6>
-          <div class="d-flex justify-content-center">
-            <h6>15.990.000đ</h6>
-            <h6 class="text-muted ml-2">
-              <del>16.990.000đ</del>
-            </h6>
-          </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between bg-light border">
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ
-            hàng</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-      <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-          <img class="img-fluid w-100" src="assets/img/tivi-sony.png" alt="">
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-          <h6 class="text-truncate mb-3">Coex Android TV 43UT7000X</h6>
-          <div class="d-flex justify-content-center">
-            <h6>23.990.000đ</h6>
-            <h6 class="text-muted ml-2">
-              <del>24.990.000đ</del>
-            </h6>
-          </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between bg-light border">
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ
-            hàng</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-      <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-          <img class="img-fluid w-100" src="assets/img/tivi-lg.png" alt="">
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-          <h6 class="text-truncate mb-3">LG Smart TV 55UP7550PTC</h6>
-          <div class="d-flex justify-content-center">
-            <h6>20.990.000đ</h6>
-            <h6 class="text-muted ml-2">
-              <del>21.990.000đ</del>
-            </h6>
-          </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between bg-light border">
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ
-            hàng</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-      <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-          <img class="img-fluid w-100" src="assets/img/tivi-new.png" alt="">
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-          <h6 class="text-truncate mb-3">Coex LED TV 32F4000X</h6>
-          <div class="d-flex justify-content-center">
-            <h6>30.990.000đ</h6>
-            <h6 class="text-muted ml-2">
-              <del>31.990.000đ</del>
-            </h6>
-          </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between bg-light border">
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ
-            hàng</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-      <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-          <img class="img-fluid w-100" src="assets/img/tivi-ss.png" alt="">
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-          <h6 class="text-truncate mb-3">Coex Android TV 55UT7000X</h6>
-          <div class="d-flex justify-content-center">
-            <h6>18.990.000đ</h6>
-            <h6 class="text-muted ml-2">
-              <del>19.990.000đ</del>
-            </h6>
-          </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between bg-light border">
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ
-            hàng</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-      <div class="card product-item border-0 mb-4">
-        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-          <img class="img-fluid w-100" src="assets/img/tivi-codex.png" alt="">
-        </div>
-        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-          <h6 class="text-truncate mb-3">Sony Google TV KD-50X75K</h6>
-          <div class="d-flex justify-content-center">
-            <h6>85.990.000đ</h6>
-            <h6 class="text-muted ml-2">
-              <del>90.000.000đ</del>
-            </h6>
-          </div>
-        </div>
-        <div class="card-footer d-flex justify-content-between bg-light border">
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>
-          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ
-            hàng</a>
-        </div>
-      </div>
-    </div>
+
+<!--    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">-->
+<!--      <div class="card product-item border-0 mb-4">-->
+<!--        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">-->
+<!--          <img class="img-fluid w-100" src="assets/img/tivi2.png" alt="">-->
+<!--        </div>-->
+<!--        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">-->
+<!--          <h6 class="text-truncate mb-3">Sony Google TV KD-55X75K</h6>-->
+<!--          <div class="d-flex justify-content-center">-->
+<!--            <h6>28.790.000đ</h6>-->
+<!--            <h6 class="text-muted ml-2">-->
+<!--              <del>33.990.000đ</del>-->
+<!--            </h6>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-footer d-flex justify-content-between bg-light border">-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ-->
+<!--            hàng</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">-->
+<!--      <div class="card product-item border-0 mb-4">-->
+<!--        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">-->
+<!--          <img class="img-fluid w-100" src="assets/img/tivi3.png" alt="">-->
+<!--        </div>-->
+<!--        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">-->
+<!--          <h6 class="text-truncate mb-3">Sony Xperia 1 IV</h6>-->
+<!--          <div class="d-flex justify-content-center">-->
+<!--            <h6>15.990.000đ</h6>-->
+<!--            <h6 class="text-muted ml-2">-->
+<!--              <del>16.990.000đ</del>-->
+<!--            </h6>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-footer d-flex justify-content-between bg-light border">-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ-->
+<!--            hàng</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">-->
+<!--      <div class="card product-item border-0 mb-4">-->
+<!--        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">-->
+<!--          <img class="img-fluid w-100" src="assets/img/tivi-sony.png" alt="">-->
+<!--        </div>-->
+<!--        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">-->
+<!--          <h6 class="text-truncate mb-3">Coex Android TV 43UT7000X</h6>-->
+<!--          <div class="d-flex justify-content-center">-->
+<!--            <h6>23.990.000đ</h6>-->
+<!--            <h6 class="text-muted ml-2">-->
+<!--              <del>24.990.000đ</del>-->
+<!--            </h6>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-footer d-flex justify-content-between bg-light border">-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ-->
+<!--            hàng</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">-->
+<!--      <div class="card product-item border-0 mb-4">-->
+<!--        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">-->
+<!--          <img class="img-fluid w-100" src="assets/img/tivi-lg.png" alt="">-->
+<!--        </div>-->
+<!--        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">-->
+<!--          <h6 class="text-truncate mb-3">LG Smart TV 55UP7550PTC</h6>-->
+<!--          <div class="d-flex justify-content-center">-->
+<!--            <h6>20.990.000đ</h6>-->
+<!--            <h6 class="text-muted ml-2">-->
+<!--              <del>21.990.000đ</del>-->
+<!--            </h6>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-footer d-flex justify-content-between bg-light border">-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ-->
+<!--            hàng</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">-->
+<!--      <div class="card product-item border-0 mb-4">-->
+<!--        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">-->
+<!--          <img class="img-fluid w-100" src="assets/img/tivi-new.png" alt="">-->
+<!--        </div>-->
+<!--        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">-->
+<!--          <h6 class="text-truncate mb-3">Coex LED TV 32F4000X</h6>-->
+<!--          <div class="d-flex justify-content-center">-->
+<!--            <h6>30.990.000đ</h6>-->
+<!--            <h6 class="text-muted ml-2">-->
+<!--              <del>31.990.000đ</del>-->
+<!--            </h6>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-footer d-flex justify-content-between bg-light border">-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ-->
+<!--            hàng</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">-->
+<!--      <div class="card product-item border-0 mb-4">-->
+<!--        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">-->
+<!--          <img class="img-fluid w-100" src="assets/img/tivi-ss.png" alt="">-->
+<!--        </div>-->
+<!--        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">-->
+<!--          <h6 class="text-truncate mb-3">Coex Android TV 55UT7000X</h6>-->
+<!--          <div class="d-flex justify-content-center">-->
+<!--            <h6>18.990.000đ</h6>-->
+<!--            <h6 class="text-muted ml-2">-->
+<!--              <del>19.990.000đ</del>-->
+<!--            </h6>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-footer d-flex justify-content-between bg-light border">-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ-->
+<!--            hàng</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">-->
+<!--      <div class="card product-item border-0 mb-4">-->
+<!--        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">-->
+<!--          <img class="img-fluid w-100" src="assets/img/tivi-codex.png" alt="">-->
+<!--        </div>-->
+<!--        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">-->
+<!--          <h6 class="text-truncate mb-3">Sony Google TV KD-50X75K</h6>-->
+<!--          <div class="d-flex justify-content-center">-->
+<!--            <h6>85.990.000đ</h6>-->
+<!--            <h6 class="text-muted ml-2">-->
+<!--              <del>90.000.000đ</del>-->
+<!--            </h6>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-footer d-flex justify-content-between bg-light border">-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem chi tiết</a>-->
+<!--          <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm vào giỏ-->
+<!--            hàng</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </div>
 <!-- Products End -->

@@ -25,9 +25,10 @@
       </div>
       <div class="col-md-2 mt-3">
         <div class="nav-item dropdown" *ngIf="role == 'ROLE_ADMIN' && loginStatus == true">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="padding-top: 20px">Quản lý sản phẩm</a>
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="padding-top: 5px">Quản lý sản phẩm</a>
           <div class="dropdown-menu rounded-0 m-0">
             <a [routerLink]="['/product/create']" class="dropdown-item">Thêm mới sản phẩm</a>
+            <a [routerLink]="['/product/list']" class="dropdown-item">Danh sách sản phẩm</a>
           </div>
         </div>
       </div>
@@ -58,7 +59,7 @@
         </div>
         <div class="container-1">
           <span class="icon"><i class="fa fa-search"></i></span>
-          <input type="search" id="search" placeholder="Bạn cần tìm gì ?" autocomplete="off"/>
+          <input  type="search" id="search" placeholder="Bạn cần tìm gì ?" autocomplete="off"/>
         </div>
       </div>
     </div>
